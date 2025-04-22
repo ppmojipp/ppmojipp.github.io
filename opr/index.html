@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIG Operation Tools : Nattapong</title>
+  
+  <!-- Include Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      color: black;
+    }
+
+    /* Left Task Bar */
+    .task-bar {
+      width: 250px;
+      height: 100vh;
+      background-color: #ADD8E6;
+      color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+      position: fixed;
+      overflow-y: auto;
+    }
+
+    .task-bar h2 {
+      color: black;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .task-bar a {
+      text-decoration: none;
+      color: black;
+      padding: 10px 20px;
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid #34495e;
+    }
+
+    .task-bar a:hover {
+      background-color: #34495e;
+    }
+
+    /* Main Menu (Buttons with icons) */
+    .toggle {
+      cursor: pointer;
+      padding: 10px 20px;
+      width: 100%;
+      text-align: left;
+      background-color: #FFA500;
+      border: none;
+      color: black;
+      border-bottom: 1px solid #34495e;
+      display: flex;
+      align-items: center;
+    }
+
+    .toggle:hover {
+      background-color: #e67e22;
+    }
+
+    .toggle img {
+      margin-right: 10px;
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Sub-menu */
+    .submenu {
+      display: none;
+      flex-direction: column;
+      background-color: #90EE90;
+      width: 100%;
+      font-size: 12px;
+    }
+
+    .submenu a {
+      padding-left: 40px;
+      border: none;
+      display: flex;
+      align-items: center;
+      color: black;
+    }
+
+    .submenu a:hover {
+      background-color: #77DD77;
+    }
+
+    .submenu i {
+      margin-right: 10px;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      padding: 20px;
+      flex: 1;
+      background-color: #ecf0f1;
+      min-height: 100vh;
+    }
+
+    .main-content h1 {
+      color: black;
+    }
+
+    @media (max-width: 768px) {
+      .task-bar {
+        width: 200px;
+      }
+
+      .main-content {
+        margin-left: 200px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .task-bar {
+        width: 100px;
+      }
+
+      .main-content {
+        margin-left: 100px;
+      }
+
+      .task-bar a {
+        font-size: 12px;
+        padding: 10px;
+      }
+    }
+  </style>
+  <script>
+    function toggleSubmenu(submenuId) {
+      const submenu = document.getElementById(submenuId);
+      submenu.style.display = submenu.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+</head>
+<body>
+  <div class="task-bar">
+    <h2>Tools List</h2>
+    
+    <!-- Main Menu with Icons -->
+    <button class="toggle" onclick="toggleSubmenu('tools-console')">
+      <i class="fas fa-cogs" style="margin-right: 10px;"></i> Product Console
+    </button>
+    <div class="submenu" id="tools-console">
+        <a href="https://waf.aiglab.online:8083"><i class="fas fa-cogs"></i>Imperva Onprem Console</a>
+        <a href="http://js.aigsup.xyz:8081//"><i class="fas fa-server"></i>Jump Server</a>
+        <a href="http://firewall.aiglab.online/"><i class="fas fa-shield-alt"></i>Firewall Demo</a>
+    </div>
+    <button class="toggle" onclick="toggleSubmenu('scenario-waap-gw')">
+      <i class="fas fa-cogs" style="margin-right: 10px;"></i> Scenario - WAAP Onpremise
+    </button>
+    <div class="submenu" id="scenario-waap-gw">
+        <!-- Component diagram -->
+        <a href="./scenario-waap-gw/scenario1.html"><i class="fab fa-jenkins"></i>Scenario#1</a>
+        <!-- Application Flow -->
+        <a href="./scenario-waap-gw/scenario2.html"><i class="fab fa-jenkins"></i>Scenario#2</a>
+        <!-- Onboard Application -->
+        <a href="./scenario-waap-gw/scenario3.html"><i class="fab fa-jenkins"></i>Scenario#3</a>
+        <!-- SSL Profile -->
+        <a href="./scenario-waap-gw/scenario4.html"><i class="fab fa-jenkins"></i>Scenario#4</a>
+        <!-- Predefined Policy -->
+        <a href="./scenario-waap-gw/scenario5.html"><i class="fab fa-jenkins"></i>Scenario#5</a>
+        <!-- Signature Overview -->
+        <a href="./scenario-waap-gw/scenario6.html"><i class="fab fa-jenkins"></i>Scenario#6</a>
+        <!-- ADC Update -->
+        <a href="./scenario-waap-gw/scenario7.html"><i class="fab fa-jenkins"></i>Scenario#7</a>
+        <!-- Test injection -->
+        <a href="./scenario-waap-gw/scenario8.html"><i class="fab fa-jenkins"></i>Scenario#8</a>
+        <!-- Exception -->
+        <a href="./scenario-waap-gw/scenario9.html"><i class="fab fa-jenkins"></i>Scenario#9</a>
+        <!-- Website Error Page Handle -->
+        <a href="./scenario-waap-gw/scenario10.html"><i class="fab fa-jenkins"></i>Scenario#10</a>
+        <!-- Dynamic Profiling -->
+        <a href="./scenario-waap-gw/scenario11.html"><i class="fab fa-jenkins"></i>Scenario#11</a>
+        <!-- Web Custom Policy -->
+        <a href="./scenario-waap-gw/scenario12.html"><i class="fab fa-jenkins"></i>Scenario#12</a>
+    </div>
+    <button class="toggle" onclick="toggleSubmenu('scenario-waap-cloud')">
+        <i class="fas fa-cogs" style="margin-right: 10px;"></i> Scenario - WAAP Cloud
+    </button>
+    <div class="submenu" id="scenario-waap-cloud">
+        <!-- Component diagram -->
+        <a href="./scenario-waap-cloud/scenario.html"><i class="fab fa-jenkins"></i>Scenario#</a>
+        <!-- Application Flow -->
+        <a href="./scenario-waap-cloud/scenario.html"><i class="fab fa-jenkins"></i>Scenario#</a>
+        <!-- Login to Portal -->
+        <a href="./scenario-waap-cloud/scenario.html"><i class="fab fa-jenkins"></i>Scenario#</a>
+        <!-- Onboard new Website -->
+        <a href="./scenario-waap-cloud/scenario.html"><i class="fab fa-jenkins"></i>Scenario#</a>
+        <!-- SSL Profile -->
+        <a href="./scenario-waap-cloud/scenario.html"><i class="fab fa-jenkins"></i>Scenario#</a>
+        <!-- WAF Policy -->
+        <a href="./scenario-waap-cloud/scenario.html"><i class="fab fa-jenkins"></i>Scenario#</a>
+        <!-- ACL Policy -->
+        <a href="./scenario-waap-cloud/scenario.html"><i class="fab fa-jenkins"></i>Scenario#</a>
+        <!-- BOT Policy -->
+        <a href="./scenario-waap-cloud/scenario.html"><i class="fab fa-jenkins"></i>Scenario#</a>
+        <a href="./scenario-waap-cloud/scenario.html"><i class="fab fa-jenkins"></i>Scenario#</a>
+        <a href="./scenario-waap-cloud/scenario.html"><i class="fab fa-jenkins"></i>Scenario#</a>
+        <a href="./scenario-waap-cloud/scenario.html"><i class="fab fa-jenkins"></i>Scenario#</a>
+        <a href="./scenario-waap-cloud/scenario.html"><i class="fab fa-jenkins"></i>Scenario#</a>
+        <a href="./scenario-waap-cloud/scenario.html"><i class="fab fa-jenkins"></i>Scenario#</a>
+    </div>
+
+  </div>
+
+  <div class="main-content">
+    <h1>Welcome to Demo Lab and Scenario</h1>
+    <p>This console provides internal links to AIG's Tools. Use the task bar on the left to navigate.</p>
+    <a href="https://waf.aiglab.online:8083/SecureSphere/app/#security_policy">policy</a>
+  </div>
+</body>
+</html>
